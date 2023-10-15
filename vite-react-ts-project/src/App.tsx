@@ -1,24 +1,14 @@
-import Heading from "./components/Heading"
-import { Section } from "./components/Sections"
 import Counter from "./components/counter"
-import List from "./components/List"
+import { CounterProvider } from "./context/CounterContext"
+import { initState } from "./context/CounterContext"
 
 
 function App() {
-  
-
   return (
     <>
-    <Heading title={"Hello"}/>
-    <Section> Hello world </Section>
-
+    <CounterProvider count={initState.count} text={initState.text}>
     <Counter>{(num: number) => <>Current Count: {num}</>}</Counter>
-
-
-    <List 
-      items = {["Coffee", "Tacos", "Mango", "Fanta"]}
-      render = {(item:string) => <span className="bpld">{item}</span>}
-    />
+    </CounterProvider>
     </>
     )
 }
