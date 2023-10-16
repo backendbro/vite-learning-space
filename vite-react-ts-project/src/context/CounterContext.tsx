@@ -11,11 +11,13 @@ export const initState:StateType = {
     text:""
 }
 
+
 const enum REDUCER_ACTION_TYPE {
     INCREMENT, 
     DECREMENT,
     NEW_INPUT 
 }
+
 
 type ReducerAction = {
     type:REDUCER_ACTION_TYPE,
@@ -37,6 +39,7 @@ const reducer = (state:StateType, action:ReducerAction): StateType => {
 
 
 const useCounterContext = (initState: StateType) => {
+    
     const [state, dispatch] = useReducer (reducer, initState)
 
  
